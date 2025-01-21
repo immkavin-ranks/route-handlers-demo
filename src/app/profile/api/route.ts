@@ -11,5 +11,9 @@ export async function GET () {
 
   console.log(headersList.get('Authorization'))
 
-  return new Response('Profile data')
+  return new Response('<h1>Profile API data</h1>', {
+    'headers': {
+        "Content-Type": "text/html"
+    }
+  })
 }
