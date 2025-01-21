@@ -1,11 +1,15 @@
-import { type NextRequest } from "next/server";
+// import { type NextRequest } from "next/server";
 
-export async function GET(request: NextRequest) {
+import { headers } from 'next/headers'
 
-    const requestHeaders = new Headers(request.headers)
+export async function GET () {
+  // const requestHeaders = new Headers(request.headers)
 
-    console.log(requestHeaders.get('Authorization'));
-    
+  // console.log(requestHeaders.get('Authorization'));
 
-    return new Response("Profile data");
+  const headersList = await headers()
+
+  console.log(headersList.get('Authorization'))
+
+  return new Response('Profile data')
 }
